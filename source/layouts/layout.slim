@@ -9,8 +9,11 @@ html
     /! Use title if it's in the page YAML fronmatter
     title= current_page.data.title || "The Middleman"
 
-    = stylesheet_link_tag "normalize", "all"
+    = stylesheet_link_tag "application"
     = javascript_include_tag "all"
 
   body class="#{page_classes}"
     == yield
+    footer
+      p= "最終更新日時: #{last_update}"
+      p= "Copyright (c) #{copyright_year} Naoto Kaneko All Rights Reserved."
