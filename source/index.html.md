@@ -1,7 +1,3 @@
----
-title: naoty.info
----
-
 # naoty.info
 
 ## 基本情報

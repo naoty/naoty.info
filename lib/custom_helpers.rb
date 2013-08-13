@@ -1,6 +1,13 @@
 module CustomHelpers
+  def page_title
+    title = current_page.data.title
+    title ? "#{title} - naoty.info" : "naoty.info"
+  end
+
   def last_update
-    File.mtime(__FILE__)
+    path = File.join("source", current_path)
+    path = Dir["#{path}*"].first
+    File.mtime(path)
   end
 
   def copyright_year

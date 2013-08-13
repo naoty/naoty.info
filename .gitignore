@@ -3,4 +3,5 @@
 /.sass-cache
 .DS_Store
 
+source/entries
 secret.yml
