@@ -1,6 +1,18 @@
+require "yaml"
 require "./lib/custom_helpers"
 
 activate :livereload
+
+secret = YAML.load_file("./secret.yml")
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host = secret["deploy"]["host"]
+  deploy.path = secret["deploy"]["path"]
+  deploy.user = secret["deploy"]["user"]
+  deploy.port = secret["deploy"]["port"]
+
+  deploy.build_before = true
+end
 
 helpers CustomHelpers
 
