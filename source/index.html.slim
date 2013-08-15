@@ -1,0 +1,11 @@
+h1 naoty.info
+
+= partial "aboutme"
+
+h2 最近のエントリー
+
+ul
+  - blog.articles[0..5].each do |article|
+    li
+      span= "#{article.date.strftime("%Y-%m-%d")} "
+      = link_to article.title, article.url

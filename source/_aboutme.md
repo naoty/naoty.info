@@ -1,5 +1,3 @@
-# naoty.info
-
 ## 基本情報
 - naoty.k[at]gmail.com
 - https://github.com/naoty

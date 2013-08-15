@@ -10,5 +10,5 @@ h1
 ul
   - page_articles.each do |article|
     li
-      span= article.date.strftime("%Y-%m-%d") + ": "
+      span= "#{article.date.strftime("%Y-%m-%d")} "
       = link_to article.title, article
