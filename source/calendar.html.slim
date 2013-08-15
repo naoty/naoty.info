@@ -1,0 +1,14 @@
+h1
+  - case page_type
+  - when "year"
+    = "naoty.info/#{year}/"
+  - when "month"
+    = "naoty.info/#{year}/#{month.to_s.rjust(2, "0")}/"
+  - when "day"
+    = "naoty.info/#{year}/#{month.to_s.rjust(2, "0")}/#{day.to_s.rjust(2, "0")}/"
+
+ul
+  - page_articles.each do |article|
+    li
+      span= article.date.strftime("%Y-%m-%d") + ": "
+      = link_to article.title, article

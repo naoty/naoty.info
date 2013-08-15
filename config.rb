@@ -1,9 +1,17 @@
 require "yaml"
+require "pry"
 require "./lib/custom_helpers"
 
 Time.zone = "Tokyo"
 
-activate :blog
+activate :blog do |blog|
+  blog.sources = ":year/:month/:day.html"
+  blog.permalink = ":year/:month/:day.html"
+  blog.calendar_template = "calendar.html"
+  blog.year_link = ":year/index.html"
+  blog.month_link = ":year/:month/index.html"
+  blog.day_link = ":year/:month/:day/index.html"
+end
 
 secret = YAML.load_file("./secret.yml")
 activate :deploy do |deploy|
