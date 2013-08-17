@@ -8,3 +8,5 @@ gem "middleman-livereload", "~> 3.1.0"
 gem "slim", "~> 2.0.1"
 gem "redcarpet", "~> 3.0.0"
 gem "builder", "~> 3.2.2"
+
+gem "pry"
